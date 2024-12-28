@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  grid-template-rows: repeat(6, 80px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.hole {
+  width: 80px;
+  height: 80px;
+}
+
+.mole {
+  width: 60px;
+  height: 60px;
+  left: 10px;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #8B4513;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hole::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #654321;
+  border-radius: 50%;
+  bottom: -40px;
+  left: 10px;
+}
+
+.mole {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/01/31/23/42/animal-2028258_960_720.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: -80px;
+  left: 10px;
+  transition: bottom 0.3s ease;
+  cursor: pointer;
+}
+
+.mole.up {
+  bottom: 0;
+  animation: molePop 0.3s ease;
+}
+
+@keyframes molePop {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.start-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.start-btn:hover {
+  background-color: #45a049;
+}
+
+.score {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
